@@ -61,43 +61,61 @@
         // Socket es el cliente del lado del cliente
         const socket = io('http://localhost:8080');
 
-        // Referencias a los elementos del dom
-        const formulario = document.querySelector('#miFormulario')
-        const misMensajes = document.querySelector('#misMensajes')
-        const txtMensaje = document.querySelector('#txtMensaje')
 
-        formulario.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const nuevoMensaje = txtMensaje.value;
-
-            socket.emit('mensaje-to-server', {
-                texto: nuevoMensaje
-            })
-        })
-
-        socket.on('mensaje-from-server', (data) => {
-            misMensajes.innerHTML += `<li>${data.texto}</li>` 
-        })
+        
 
 
 
-        // Data es lo que envia el servidor
-        // socket.on es para esuchar
-        // socket.on('mensaje-bienvenida', (data) => {
-        //     console.log("El servidor emitio algo", data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // // Referencias a los elementos del dom
+        // const formulario = document.querySelector('#miFormulario')
+        // const misMensajes = document.querySelector('#misMensajes')
+        // const txtMensaje = document.querySelector('#txtMensaje')
+
+        // formulario.addEventListener('submit', (e) => {
+        //     e.preventDefault();
+
+        //     const nuevoMensaje = txtMensaje.value;
+
+        //     socket.emit('mensaje-to-server', {
+        //         texto: nuevoMensaje
+        //     })
         // })
 
-        // setTimeout(() => {
-        //     // Emitir evento
-        //     // mensaje-cliente
-        //     // {msg: 'cliente', nombre: 'Fernando'}
-        //     // El cliente tambien puede emitir un evento
-        //     socket.emit('mensaje-cliente', {
-        //         msg: 'cliente',
-        //         nombre: 'Fernando'
-        //     })
-        // }, 2000);
+        // socket.on('mensaje-from-server', (data) => {
+        //     misMensajes.innerHTML += `<li>${data.texto}</li>` 
+        // })
+
+
+
+        // // Data es lo que envia el servidor
+        // // socket.on es para esuchar
+        // // socket.on('mensaje-bienvenida', (data) => {
+        // //     console.log("El servidor emitio algo", data)
+        // // })
+
+        // // setTimeout(() => {
+        // //     // Emitir evento
+        // //     // mensaje-cliente
+        // //     // {msg: 'cliente', nombre: 'Fernando'}
+        // //     // El cliente tambien puede emitir un evento
+        // //     socket.emit('mensaje-cliente', {
+        // //         msg: 'cliente',
+        // //         nombre: 'Fernando'
+        // //     })
+        // // }, 2000);
 
 
     </script>

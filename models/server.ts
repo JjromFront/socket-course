@@ -3,6 +3,7 @@ import { Server as HTTPServer } from 'http';
 import { Server as SocketIOServer } from 'socket.io'; 
 import path from 'path';
 import Sockets from './sockets';
+import cors from 'cors';
 
 interface ServerInterface {
     app: Application;
@@ -29,7 +30,11 @@ class Server implements ServerInterface {
     }
 
     middlewares() {
+        // desplegar directorio publico
         this.app.use(express.static(path.resolve(__dirname, '../public')))
+
+        // CORS
+        this.app.use(cors())
     }
 
     configurarSockets () {
